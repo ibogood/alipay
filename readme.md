@@ -1,5 +1,9 @@
+//全部重写用户laravel的支付宝组件
 
-本项目只是修复了php7.2的each被废弃bug 正版请访问latrell/alipay
+本来本项目只是修复了php7.2的each被废弃bug 
+本来是参考latrell/alipay
+但是说实话代码写得有点冗余 于是帮他精简了下 欢迎各位使用 有问题会及时修复
+
 ======
 Alipay
 ======
