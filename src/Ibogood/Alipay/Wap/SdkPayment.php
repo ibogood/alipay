@@ -286,12 +286,13 @@ class SdkPayment
 	private function createLinkstring($para)
 	{
 		$arg = '';
-		while ((list ($key, $val) = each($para)) == true) {
+		//while ((list ($key, $val) = each($para)) == true) {
+        foreach($para as $key=>$val){
 			$arg .= $key . '=' . $val . '&';
 		}
 		//去掉最后一个&字符
-		$arg = substr($arg, 0, count($arg) - 2);
-
+		//$arg = substr($arg, 0, count($arg) - 2);
+        $arg = substr($arg, 0, strlen($arg) - 1);
 		//如果存在转义字符，那么去掉转义
 		if (get_magic_quotes_gpc()) {
 			$arg = stripslashes($arg);
@@ -308,12 +309,13 @@ class SdkPayment
 	private function createLinkstringUrlencode($para)
 	{
 		$arg = '';
-		while ((list ($key, $val) = each($para)) == true) {
+		//while ((list ($key, $val) = each($para)) == true) {
+        foreach($para as $key=>$val){
 			$arg .= $key . '=' . urlencode($val) . '&';
 		}
 		//去掉最后一个&字符
-		$arg = substr($arg, 0, count($arg) - 2);
-
+		//$arg = substr($arg, 0, count($arg) - 2);
+        $arg = substr($arg, 0, strlen($arg) - 1);
 		//如果存在转义字符，那么去掉转义
 		if (get_magic_quotes_gpc()) {
 			$arg = stripslashes($arg);
