@@ -1,5 +1,5 @@
 <?php
-namespace Latrell\Alipay\Wap;
+namespace Ibogood\Alipay\Wap;
 
 class SdkPayment
 {

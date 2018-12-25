@@ -28,7 +28,7 @@ composer require ibogood/alipay dev-master
 ```php
     'providers' => [
         // ...
-        'Latrell\Alipay\AlipayServiceProvider',
+        'Ibogood\Alipay\AlipayServiceProvider',
     ]
 ```
 
@@ -39,7 +39,7 @@ composer require ibogood/alipay dev-master
 
 ```php
 //Register Service Providers
-$app->register(Latrell\Alipay\AlipayServiceProvider::class);
+$app->register(Ibogood\Alipay\AlipayServiceProvider::class);
 ```
 
 由于Lumen的`artisan`命令不支持`vendor:publish`,需要自己手动将`src/config`下的配置文件拷贝到项目的`config`目录下,

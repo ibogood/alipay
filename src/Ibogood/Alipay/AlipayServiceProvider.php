@@ -1,5 +1,5 @@
 <?php
-namespace Latrell\Alipay;
+namespace Ibogood\Alipay;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Application as LaravelApplication;

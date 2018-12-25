@@ -5,7 +5,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Latrell Chan",
+            "name": "Ibogood Chan",
             "email": "i@latrell.me"
         }
     ],
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Latrell\\Alipay\\": "src/Latrell/Alipay/"
+            "Ibogood\\Alipay\\": "src/Ibogood/Alipay/"
         }
     },
     "minimum-stability": "stable"

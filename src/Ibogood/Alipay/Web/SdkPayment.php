@@ -1,5 +1,5 @@
 <?php
-namespace Latrell\Alipay\Web;
+namespace Ibogood\Alipay\Web;
 
 use Carbon\Carbon;
 
