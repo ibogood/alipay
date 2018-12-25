@@ -1,11 +1,11 @@
 {
-    "name": "latrell/alipay",
-    "description": "支付宝SDK在Laravel5封装包。",
+    "name": "ibogood/alipay",
+    "description": "支付宝SDK在Laravel5封装包。只是修复bug，原版支持latrell/alipay",
     "keywords": ["L5", "Laravel 5", "Laravel", "Alipay", "Alipay SDK"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Ibogood Chan",
+            "name": "Bo Chan",
             "email": "i@latrell.me"
         }
     ],
