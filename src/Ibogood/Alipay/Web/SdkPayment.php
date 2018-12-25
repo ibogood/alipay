@@ -3,7 +3,7 @@ namespace Ibogood\Alipay\Web;
 
 use Carbon\Carbon;
 use Ibogood\Alipay\Payment;
-Illuminate\Support\Facades\Input;
+
 class SdkPayment extends Payment
 {
 

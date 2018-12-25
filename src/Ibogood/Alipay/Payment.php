@@ -7,7 +7,7 @@
  */
 
 namespace Ibogood\Alipay;
-
+use Illuminate\Support\Facades\Input;
 
 class Payment
 {
@@ -103,12 +103,14 @@ class Payment
      * @return string 返回字符串
      */
     protected function connectParams($params,$isEncodeUrl=false){
+
         $string = '';
         foreach($params as $key=>$val){
             $string .= $key . '=' . ($isEncodeUrl ? urlencode($val) : $val) . '&';
         }
         //去掉最后一个&字符
         $string = substr($string, 0, strlen($string) - 1);
+
         //如果存在转义字符，那么去掉转义
         if (get_magic_quotes_gpc()) {
             $string = stripslashes($string);
@@ -143,7 +145,7 @@ class Payment
     /**
      * RSA验签
      * @param $data 待签名数据
-     * @param $ali_public_key_path 支付宝的公钥文件路径
+     * @param $public_key_path 支付宝的公钥文件路径
      * @param $sign 要校对的的签名结果
      * @return 验证结果
      */
@@ -225,9 +227,10 @@ class Payment
      */
     protected function filterParams($params)
     {
-        return array_filter($params,function($key,$val){
+        $params = array_filter($params,function($val,$key){
             return  !in_array($key,['sign','sign_type']) && !empty($val);
-        });
+        },ARRAY_FILTER_USE_BOTH);
+        return $params;
     }
     /**
      * 生成要请求给支付宝的参数数组
@@ -239,6 +242,7 @@ class Payment
         $params = $this->sortParams($this->filterParams($params));
         $params['sign'] = $this->buildSign($params);
         $params['sign_type'] = strtoupper(trim($this->sign_type));
+
         return $params;
     }
 
